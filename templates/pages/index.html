@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header text-white">
+                    <h4>Ar-Fi Şifreleyecisi - Kriptolojide Fibonacci Devrimi</h4>
+                </div>
+                <div class="card-body">
+                    <form action="{% url 'index' %}" method="POST">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                            <label for="anahtar">Anahtar Sayı Giriniz:</label>
+                            <input type="text" name="anahtar" class="form-control" required>
+                        </div>                      
+                        <div class="form-group">
+                            <label for="sifrele">sifrelenecekkelime</label>
+                            <input type="text" name="sifrele" class="form-control">
+                        </div>            
+                        <div class="form-group">
+                            <label for="sifrecoz">sifrelenmiskelime</label>
+                            <input type="text" name="sifrecoz" class="form-control" >
+                        </div>               
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
